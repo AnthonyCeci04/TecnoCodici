@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TecnoCodici:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TecnoCodici_jar</output-path>
+    <root id="archive" name="TecnoCodici.jar">
+      <element id="module-output" name="TecnoCodici" />
+    </root>
+  </artifact>
+</component>
