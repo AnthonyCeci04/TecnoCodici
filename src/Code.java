@@ -1,7 +1,8 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Code {
-    public static void open() {
+    public static void open(ArrayList hist) {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -33,18 +34,23 @@ public class Code {
 
         String file_path = " ";
         String code = " ";
+        String histType = " ";
+
         switch (chooseCode) {
             case 1 -> {
                 file_path = "Codici/Codice Civile.csv";
                 code = "Civile";
+                histType = "CC";
             }
             case 2 -> {
                 file_path = "Codici/Codice Penale.csv";
                 code = "Penale";
+                histType = "CP";
             }
             case 3 -> {
                 file_path = "Codici/Codice Stradale.csv";
                 code = "Stradale";
+                histType = "CS";
             }
         }
 
@@ -52,8 +58,7 @@ public class Code {
         String strArt = scanner.nextLine().strip();
         System.out.println();
         int art = Checks.parseInt(strArt);
-
-        File.reader(file_path, code, art);
+        File.reader(file_path, code, art, hist, histType);
     }
 }
 

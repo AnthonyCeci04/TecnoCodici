@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Scanner;
+import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) throws URISyntaxException, IOException {
 
@@ -37,6 +38,7 @@ public class Main {
             strChoose = scanner.nextLine().strip();
             choose = Checks.parseInt(strChoose);
         }
+        ArrayList history = new ArrayList();
         switch (choose) {
             case 1 -> {
                 do {
@@ -47,9 +49,12 @@ public class Main {
             }
             case 2 -> {
                 do {
-                    Code.open();
-                    System.out.print("\n\n\nCercare un altro articolo? (n per uscire) -> ");
+                    Code.open(history);
+                    System.out.print("\n\n\nCercare un altro articolo?\n\t(n per uscire, h per guardare la cronologia) -> ");
                     redo = scanner.nextLine().strip();
+
+                    if (redo.equals("h")) History.load(history);
+
                 } while (!redo.equals("n"));
             }
         }
