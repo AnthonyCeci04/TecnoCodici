@@ -11,6 +11,7 @@ public class Main {
 
         System.out.print("TecnoCodici - by ToxicAnthony @NonSonoAntho\n\n\nAggiornamento dei codici in corso...");
         File.update();
+
         Console.clear();
 
         System.out.println("TecnoCodici - by ToxicAnthony @NonSonoAntho\n\n");
@@ -58,7 +59,5 @@ public class Main {
                 } while (!redo.equals("n"));
             }
         }
-        }
-
-
     }
+}
