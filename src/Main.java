@@ -7,6 +7,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         Console.clear();
+
+        System.out.print("TecnoCodici - by ToxicAnthony @NonSonoAntho\n\n\nAggiornamento dei codici in corso...");
+        File.update();
+        Console.clear();
+
         System.out.println("TecnoCodici - by ToxicAnthony @NonSonoAntho\n\n");
 
         String strChoose;

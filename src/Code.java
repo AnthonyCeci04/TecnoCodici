@@ -1,10 +1,7 @@
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Code {
-    public static void open() throws IOException {
+    public static void open() {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -38,15 +35,15 @@ public class Code {
         String code = " ";
         switch (chooseCode) {
             case 1 -> {
-                file_path = "Codici/Codice Civile.cc";
+                file_path = "Codici/Codice Civile.csv";
                 code = "Civile";
             }
             case 2 -> {
-                file_path = "Codici/Codice Penale.cp";
+                file_path = "Codici/Codice Penale.csv";
                 code = "Penale";
             }
             case 3 -> {
-                file_path = "Codici/Codice Stradale.cs";
+                file_path = "Codici/Codice Stradale.csv";
                 code = "Stradale";
             }
         }
@@ -55,33 +52,8 @@ public class Code {
         String strArt = scanner.nextLine().strip();
         System.out.println();
         int art = Checks.parseInt(strArt);
-        boolean find = false;
 
-        long numberOfLines = Files.lines(Paths.get(file_path)).count();
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(file_path));
-            String line;
-            int current_line = 1;
-
-            while ((line = reader.readLine()) != null) {
-                if (current_line == art) {
-                    String[] parts = line.split(";");
-                    for (String part : parts) {
-                        System.out.println(part.trim());
-                    }
-                    find = true;
-                    break;
-                }
-
-                current_line++;
-            }
-
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if (!find)
-            System.out.printf("Questo articolo non esiste, ricorda che il Codice %s possiede da 1 a %d articoli.\n", code, numberOfLines);
+        File.reader(file_path, code, art);
     }
 }
 
