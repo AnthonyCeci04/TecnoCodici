@@ -21,6 +21,8 @@ public class Link {
                   1) Codice Civile
                   2) Codice Penale
                   3) Codice Stradale
+                  4) Statuto dei Lavoratori
+                  5) Costituzione
                 └────────────────────────────────────┘
 
                 """);
@@ -30,7 +32,7 @@ public class Link {
 
         int chooseLink = Checks.parseInt(strLink);
 
-        while (chooseLink < 1 || chooseLink > 3) {
+        while (chooseLink < 1 || chooseLink > 5) {
             System.out.print("\tErrore durante la scelta, il numero inserito non è valido.\n\tReinserisci il numero: ");
             strLink = scanner.nextLine().strip();
             chooseLink = Checks.parseInt(strLink);
@@ -48,6 +50,14 @@ public class Link {
             case 3 -> {
                 desktop.browse((new URI("https://docs.google.com/document/d/148aM4VqIpN3jfodK8Dr6pExzYMUaB_byy0S17w_YzcE/edit#heading=h.a3wf3qhptxmg")));
                 System.out.print("Hai aperto con successo il Codice Stradale");
+            }
+            case 4 -> {
+                desktop.browse((new URI("https://docs.google.com/document/d/10pZracNrp6d-H_-SehEPNzERBcNkEow7ogQNbE9HQ-k/edit?usp=sharing")));
+                System.out.print("Hai aperto con successo lo Statuto dei Lavoratori");
+            }
+            case 5 -> {
+                desktop.browse((new URI("https://docs.google.com/document/d/1KAeQAqK0wOC-CLheSoRvnRDLIJtqRaXO3ItH18LR2kQ/edit#heading=h.qgbinrf8sebg")));
+                System.out.print("Hai aperto con successo la Costituzione");
             }
         }
     }

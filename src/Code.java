@@ -18,6 +18,8 @@ public class Code {
                   1) Codice Civile
                   2) Codice Penale
                   3) Codice Stradale
+                  4) Statuto dei Lavoratori
+                  5) Costituzione
                 └────────────────────────────────────┘
 
                 """);
@@ -27,7 +29,7 @@ public class Code {
 
         int chooseCode = Checks.parseInt(strCode);
 
-        while (chooseCode < 1 || chooseCode > 3) {
+        while (chooseCode < 1 || chooseCode > 5) {
             System.out.print("\tErrore durante la scelta, il numero inserito non è valido.\n\tReinserisci il numero: ");
             strCode = scanner.nextLine().strip();
             chooseCode = Checks.parseInt(strCode);
@@ -52,6 +54,16 @@ public class Code {
                 file_path = "Codici/Codice Stradale.csv";
                 code = "Stradale";
                 histType = "CS";
+            }
+            case 4 -> {
+                file_path = "Codici/Statuto dei Lavoratori.csv";
+                code = "Statuto dei Lavoratori";
+                histType = "SdL";
+            }
+            case 5 -> {
+                file_path = "Codici/Costituzione.csv";
+                code = "Costituzione";
+                histType = "Cost.";
             }
         }
 
