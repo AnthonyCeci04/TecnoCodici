@@ -1,8 +1,9 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Code {
-    public static void open(ArrayList hist) {
+    public static void open(ArrayList hist) throws IOException {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -61,5 +62,3 @@ public class Code {
         File.reader(file_path, code, art, hist, histType);
     }
 }
-
-
