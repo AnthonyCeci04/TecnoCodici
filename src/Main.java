@@ -9,6 +9,8 @@ public class Main {
 
         Console.clear();
 
+        Check.internetConnection();
+
         System.out.print("TecnoCodici - by ToxicAnthony @NonSonoAntho\n\n\nAggiornamento dei codici in corso...");
         File.update();
 
@@ -31,13 +33,13 @@ public class Main {
         System.out.print("Effettua la tua scelta: ");
         strChoose = scanner.nextLine().strip();
 
-        int choose = Checks.parseInt(strChoose);
+        int choose = Check.parseInt(strChoose);
         String redo;
 
         while (choose < 1 || choose > 2) {
             System.out.print("\tErrore durante la scelta, il numero inserito non è valido.\n\tReinserisci il numero: ");
             strChoose = scanner.nextLine().strip();
-            choose = Checks.parseInt(strChoose);
+            choose = Check.parseInt(strChoose);
         }
         ArrayList history = new ArrayList();
         switch (choose) {

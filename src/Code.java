@@ -27,12 +27,12 @@ public class Code {
         System.out.print("Effettua la tua scelta: ");
         String strCode = scanner.nextLine().strip();
 
-        int chooseCode = Checks.parseInt(strCode);
+        int chooseCode = Check.parseInt(strCode);
 
         while (chooseCode < 1 || chooseCode > 5) {
             System.out.print("\tErrore durante la scelta, il numero inserito non è valido.\n\tReinserisci il numero: ");
             strCode = scanner.nextLine().strip();
-            chooseCode = Checks.parseInt(strCode);
+            chooseCode = Check.parseInt(strCode);
         }
 
         String file_path = " ";
@@ -70,7 +70,7 @@ public class Code {
         System.out.print("\nQuale articolo vuoi cercare? -> ");
         String strArt = scanner.nextLine().strip();
         System.out.println();
-        int art = Checks.parseInt(strArt);
+        int art = Check.parseInt(strArt);
         File.reader(file_path, code, art, hist, histType);
     }
 }

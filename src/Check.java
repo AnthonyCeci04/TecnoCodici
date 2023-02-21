@@ -1,9 +1,11 @@
+import java.net.InetSocketAddress;
+import java.net.Socket;
 import java.util.Scanner;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 
-public class Checks {
+public class Check {
     public static int parseInt(String b) throws IOException{
 
         Scanner scanner = new Scanner(System.in);
@@ -25,5 +27,21 @@ public class Checks {
             System.exit(0);
         }
         return a;
+    }
+
+    public static void internetConnection () {
+        Scanner scanner = new Scanner(System.in);
+
+        String site = "www.google.it";
+
+        try (Socket socket = new Socket()) {
+            InetSocketAddress address = new InetSocketAddress(site, 80);
+            socket.connect(address,3000);
+        } catch (IOException e) {
+            System.out.print("TecnoCodici - by ToxicAnthony @NonSonoAntho\n\n\nNon sei connesso ad internet!\n");
+            System.out.print("Per poter utilizzare il software e aggiornare i codici, connettiti ad internet.\n\nPremere un tasto per chiudere il programma...");
+            scanner.nextLine();
+            System.exit(0);
+        }
     }
 }

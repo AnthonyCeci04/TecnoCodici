@@ -30,12 +30,12 @@ public class Link {
         System.out.print("Effettua la tua scelta: ");
         String strLink = scanner.nextLine().strip();
 
-        int chooseLink = Checks.parseInt(strLink);
+        int chooseLink = Check.parseInt(strLink);
 
         while (chooseLink < 1 || chooseLink > 5) {
             System.out.print("\tErrore durante la scelta, il numero inserito non è valido.\n\tReinserisci il numero: ");
             strLink = scanner.nextLine().strip();
-            chooseLink = Checks.parseInt(strLink);
+            chooseLink = Check.parseInt(strLink);
         }
 
         switch (chooseLink) {
