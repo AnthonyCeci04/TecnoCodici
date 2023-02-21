@@ -18,10 +18,15 @@ Infatti alcune parti di codice sono migliorabili (come sempre), ma ripeto, scrit
 ## Installazione
 
 1. Scaricate il file "TecnoCodici.zip" dell'ultima release e mettete i file al suo interno dentro una cartella a vostro piacere.
-2. Assicuratevi di avere Java 17 sul vostro PC, per controllare vi basterà aprire il Prompt dei Comandi ed eseguire "java --version" e controllare che ci sia il numero 17.
+2. Assicuratevi di avere Java 17 sul vostro PC, per controllare vi basterà aprire il Prompt dei Comandi ed eseguire "java --version" e controllare che ci sia il numero 17. Se non lo avete, scaricatelo da questo link: 
+	Windows: https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.exe
+	macOS: https://download.oracle.com/java/17/latest/jdk-17_macos-aarch64_bin.dmg
+	Linux: https://download.oracle.com/java/17/latest/jdk-17_linux-aarch64_bin.rpm
 3. Avviate il programma con doppio-click sull'eseguibile "start.bat"
 4. Assicuratevi che parta correttamente e che spunti nella stessa cartella una cartella denominata "Codici" al cui interno vi sono i seguenti file:
 	- "Codice Civile.csv"
 	- "Codice Penale.csv"
 	- "Codice Stradale.csv"
+	- "Statuto dei Lavoratori.csv"
+	- "Costituzione.csv"
 5. Se questi ultimi file non sono presenti all'interno della cartella, non preoccupatevi, basterà aprire il software e ve li scaricherà in automatico!
