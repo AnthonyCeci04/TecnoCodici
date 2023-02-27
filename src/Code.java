@@ -70,7 +70,10 @@ public class Code {
         System.out.print("\nQuale articolo vuoi cercare? -> ");
         String strArt = scanner.nextLine().strip();
         System.out.println();
-        int art = Check.parseInt(strArt);
-        File.reader(file_path, code, art, hist, histType);
+        boolean artIsString = Check.ifInt(strArt);
+        int art = 0;
+        if (artIsString) art = Check.parseInt(strArt);
+        File.reader(file_path, code, art, hist, histType, strArt, artIsString);
+
     }
 }

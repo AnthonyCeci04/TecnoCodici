@@ -4,29 +4,54 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class File {
-    public static void reader(String path, String codeType, int number, ArrayList history, String historyType) {
+    public static void reader(String path, String codeType, int number, ArrayList history, String historyType, String artTopic, boolean intOrString) {
         String line = "";
+        int i;
 
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-            for (int i = 1; i <= number; i++) {
-                line = br.readLine();
-                if (line == null) {
-                    System.out.printf("Questo articolo non esiste, ricorda che il Codice \"%s\" possiede da 1 a %d articoli.\n", codeType, (i - 1));
-                    return;
+        if (intOrString) {
+            try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+                for (i = 1; i <= number; i++) {
+                    line = br.readLine();
+                    if (line == null) {
+                        System.out.printf("Questo articolo non esiste, ricorda che il Codice \"%s\" possiede da 1 a %d articoli.\n", codeType, (i - 1));
+                        return;
+                    }
                 }
+                line = line.replaceAll("\"", "");
+                history.add("\t- Art. " + number + " " + historyType + ";\n");
+
+                String[] parts = line.split(";");
+
+                for (String part : parts) {
+                    System.out.println(part.trim());
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            line = line.replaceAll("\"", "");
-            history.add("\t- Art. " + number + " " + historyType + ";\n");
+        } else {
+            try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+                for (i = 1; !(line.contains(artTopic)) ; i++) {
+                    line = br.readLine();
+                    if (line == null) {
+                        System.out.println("Questo articolo non esiste.");
+                        return;
+                    }
+                }
+                line = line.replaceAll("\"", "");
+                history.add("\t- Art. " + i + " " + historyType + ";\n");
 
-            String[] parts = line.split(";");
+                String[] parts = line.split(";");
 
-            for (String part : parts) {
-                System.out.println(part.trim());
+                for (String part : parts) {
+                    System.out.println(part.trim());
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+
     }
 
     public static void update() throws IOException {

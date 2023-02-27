@@ -6,6 +6,15 @@ import java.io.File;
 import java.io.IOException;
 
 public class Check {
+    public static boolean ifInt(String b) {
+        int a = 0;
+        try {
+            a = Integer.parseInt(b);
+        } catch (NumberFormatException ex) {
+            return false;
+        }
+        return true;
+    }
     public static int parseInt(String b) throws IOException{
 
         Scanner scanner = new Scanner(System.in);
